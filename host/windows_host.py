@@ -307,7 +307,7 @@ class RemoteHostApp:
         # Session credentials
         self.partner_id = self.load_or_generate_partner_id()
         self.pin = f"{random.randint(1000, 9999)}"
-        self.server_url = "ws://localhost:8080"
+        self.server_url = "wss://remote-desktop-relay-j5a7.onrender.com"
         self.device_name = os.environ.get("COMPUTERNAME", "Windows PC")
 
         self.capturer = Win32ScreenCapturer()

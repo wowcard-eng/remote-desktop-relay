@@ -11,7 +11,7 @@ class StorageService {
   static const String _keyControlMode = 'control_mode';
   static const String _keySensitivity = 'mouse_sensitivity';
 
-  static const String defaultRelayUrl = 'ws://10.212.90.238:8080';
+  static const String defaultRelayUrl = 'wss://remote-desktop-relay-j5a7.onrender.com';
 
   static Future<String> getRelayUrl() async {
     final prefs = await SharedPreferences.getInstance();
