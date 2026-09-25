@@ -33,7 +33,7 @@ class RemoteControlApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TeamViewer Remote Desktop',
+      title: 'Remote Desktop - Himanshu Gangwar',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,

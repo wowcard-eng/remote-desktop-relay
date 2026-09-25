@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:label="remote_control_app"
+        android:label="Remote Desktop - Himanshu Gangwar"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

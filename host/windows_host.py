@@ -299,10 +299,18 @@ class Win32InputInjector:
 class RemoteHostApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("TeamViewer Remote Control - Windows Host")
-        self.root.geometry("450x640")
+        self.root.title("Remote Desktop - Developer: Himanshu Gangwar")
+        self.root.geometry("450x660")
         self.root.resizable(False, False)
         self.root.configure(bg="#0E1626")
+
+        # Set Window Icon if exists
+        try:
+            ico_candidate = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "app_icon.ico")
+            if os.path.exists(ico_candidate):
+                self.root.iconbitmap(ico_candidate)
+        except Exception:
+            pass
 
         # Session credentials
         self.partner_id = self.load_or_generate_partner_id()
@@ -354,17 +362,29 @@ class RemoteHostApp:
 
     def setup_ui(self):
         # Header banner
-        header = tk.Frame(self.root, bg="#132238", height=70)
+        header = tk.Frame(self.root, bg="#132238", height=80)
         header.pack(fill="x", side="top")
 
+        title_box = tk.Frame(header, bg="#132238")
+        title_box.pack(side="left", padx=20, pady=12)
+
         title_lbl = tk.Label(
-            header,
+            title_box,
             text="Remote Control Host",
-            font=("Segoe UI", 16, "bold"),
+            font=("Segoe UI", 15, "bold"),
             fg="#00E5FF",
             bg="#132238"
         )
-        title_lbl.pack(side="left", padx=20, pady=15)
+        title_lbl.pack(anchor="w")
+
+        dev_lbl = tk.Label(
+            title_box,
+            text="Developer: Himanshu Gangwar",
+            font=("Segoe UI", 9, "bold"),
+            fg="#00E676",
+            bg="#132238"
+        )
+        dev_lbl.pack(anchor="w")
 
         self.status_badge = tk.Label(
             header,

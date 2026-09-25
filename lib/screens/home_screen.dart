@@ -104,9 +104,19 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               child: const Icon(Icons.desktop_windows_outlined, color: Color(0xFF00E5FF), size: 20),
             ),
             const SizedBox(width: 10),
-            const Text(
-              'TeamViewer Remote',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Text(
+                  'Remote Desktop',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+                Text(
+                  'Developer: Himanshu Gangwar',
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF00E676)),
+                ),
+              ],
             ),
           ],
         ),
@@ -737,9 +747,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           Center(
             child: Column(
               children: const [
-                Text('TeamViewer Remote Desktop v1.0.0', style: TextStyle(color: Color(0xFF6C8DAE), fontSize: 12, fontWeight: FontWeight.bold)),
-                SizedBox(height: 4),
-                Text('Cross-Platform Flutter & Windows Remote Control', style: TextStyle(color: Color(0xFF476282), fontSize: 11)),
+                Text('Remote Desktop v1.0.0', style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
+                SizedBox(height: 3),
+                Text('Developer: Himanshu Gangwar', style: TextStyle(color: Color(0xFF00E5FF), fontSize: 12, fontWeight: FontWeight.bold)),
+                SizedBox(height: 2),
+                Text('Cloud Relay: Render Live', style: TextStyle(color: Color(0xFF00E676), fontSize: 11)),
               ],
             ),
           ),
